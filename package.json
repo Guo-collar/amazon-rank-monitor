@@ -1,0 +1,13 @@
+{
+  "name": "amazon-rank-monitor",
+  "version": "1.0.0",
+  "description": "亚马逊关键词排名监控，云端定时抓取并通过飞书通知",
+  "main": "fetch_rank.js",
+  "scripts": {
+    "fetch": "node fetch_rank.js",
+    "notify": "node diagnose_notify.js"
+  },
+  "dependencies": {
+    "playwright": "^1.64.1"
+  }
+}

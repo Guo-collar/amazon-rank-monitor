@@ -1,0 +1,44 @@
+name: Amazon Rank Monitor
+
+on:
+  schedule:
+    # 每4小时运行一次（UTC时间），分钟设为 0
+    - cron: '0 */4 * * *'
+  workflow_dispatch: {}  # 允许手动触发测试
+
+permissions:
+  contents: write  # 允许提交 rank_history.json 回仓库
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install playwright@1.64.1
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Fetch rank
+        run: node fetch_rank.js
+
+      - name: Diagnose and notify
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: node diagnose_notify.js
+
+      - name: Commit rank history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rank_history.json last_result.json
+          git diff --cached --quiet || git commit -m "chore: update rank history [skip ci]"
+          git push
