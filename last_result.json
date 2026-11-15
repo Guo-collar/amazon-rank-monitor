@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-11-14T23:35:15.179Z",
+  "timestamp": "2026-11-15T04:23:08.753Z",
   "marketplace": "www.amazon.com",
   "asin": "B0H1X8PBZX",
   "results": [
     {
       "keyword": "wireless cat water fountain",
       "asin": "B0H1X8PBZX",
-      "rank": 57,
+      "rank": 53,
       "page": 1,
       "error": null
     },
     {
       "keyword": "cordless cat water fountain",
       "asin": "B0H1X8PBZX",
-      "rank": 31,
+      "rank": 33,
       "page": 1,
       "error": null
     },
     {
       "keyword": "cat water fountain wireless",
       "asin": "B0H1X8PBZX",
-      "rank": 39,
+      "rank": 40,
       "page": 1,
       "error": null
     }
