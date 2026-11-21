@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-20T16:37:05.609Z",
+  "timestamp": "2026-11-21T01:01:58.250Z",
   "marketplace": "www.amazon.com",
   "asin": "B0H1X8PBZX",
   "results": [
@@ -20,7 +20,7 @@
     {
       "keyword": "cat water fountain wireless",
       "asin": "B0H1X8PBZX",
-      "rank": 45,
+      "rank": 36,
       "page": 1,
       "error": null
     }
